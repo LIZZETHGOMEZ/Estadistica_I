@@ -1,12 +1,16 @@
     
     # Martes 09 de Marzo 2021 (Ayudantía DC)
-    setwd("C:/Users/GOMEZ/Documents/Ciencias/Inferencia/Intro_DS")
+    setwd("C:/Users/GOMEZ/Documents/Ciencias/Inferencia/Estadistica_I/Data_Science_Intro")
     df <- read.csv("telecom.csv")
     
     dim(df) #Tamaño de la tabla #filas, columnas
     colnames(df) #Nombre de las columnas
     categoricas <- c('state', 'area.code', 'internacional.plan', 'voice.mail', 'churn')
-    continuas <- df[colnames(df) != categoricas]
+    continuas <- c("account.length", 'number.vmail.messages', 'total.day.minutes', 
+                   "total.day.calls", "total.day.charge", "total.eve.minutes", 
+                   "total.eve.calls", "total.eve.charge", "total.night.minutes", 
+                   "total.night.calls", "total.night.charge", "total.intl.minutes", 
+                   "total.intl.calls", "total.intl.charge", "customer.service.calls")
     
     sum(duplicated(df))
     
@@ -16,8 +20,8 @@
     }
 
 
-    #Contar la porporción de NAs por columnas
-    completitud = data.frame() #Creamos un nuebo df
+    #Contar la proporción de NAs para cada variable
+    completitud = data.frame() #Creamos un nuevo df
     for (i in 1:length(colnames(df))) {
         #Para cada renglón vamos a poner el nombre de la columna y el porcentaje 
         #de datos nulos
