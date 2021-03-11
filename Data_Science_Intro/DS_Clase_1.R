@@ -23,8 +23,8 @@
     #Contar la proporción de NAs para cada variable
     completitud = data.frame() #Creamos un nuevo df
     for (i in 1:length(colnames(df))) {
-        #Para cada renglón vamos a poner el nombre de la columna y el porcentaje 
-        #de datos nulos
+        #Por cada variable, la pondremos como renglón en la columna de variable, 
+        #y pondremos su porcentaje en la columna de cmpletitud.
         completitud[i,'variable'] = colnames(df)[i] #renglón i, columna variable
         completitud[i, 'completitud'] = (sum(is.na(df[,i]))/dim(df)[1])*100
     }
