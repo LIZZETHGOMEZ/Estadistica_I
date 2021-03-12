@@ -90,6 +90,35 @@
     curve(pnorm(x,0,1), col = 2, add = TRUE, lwd = 2)
     
     
+    # ==========================================================================
+    # 11 de Marzo 2021  
+    # ANÁLISIS BIVARIABLE
+    base<- readxl::read_excel("BASE.xlsx")
     
+    # Graficamos ambas variables
+    plot(base$Superficie, base$Precio_Venta)
+    
+    # Covarianza (Nótese que las unidades de medida son distintas
+    # por lo que se tienen que estandarizar, para ello se utiliza
+    # el Coeficiente de Correlación)
+    cov(base$Superficie, base$Precio_Venta)
+    
+    # Coeficiente de correlación
+    cor(base$Superficie, base$Precio_Venta)
+    
+    # Actualizar con video
+    
+    # ¿Cómo se dostribuye una numérica con categórica?
+    # Tomamos un boxplot para ver como se distribuye cuando la variable numérica
+    # toma sus valores en la variable categórica
+    # Aquí vemos como se distribuye el precio de venta dependiendo la variable 
+    # categórica es decir el tipo de operación (venta y alquiler)
+    boxplot(base$Precio_Venta ~ base$Operacion)
+    
+    # Aquí vemos la distribución del precio de venta entre las diferentes provincias
+    boxplot(base$Precio_Venta ~ base$Provincia)
+    
+    # Precio de venta por tipo de inmueble
+    boxplot(base$Precio_Venta ~ base$Tipo_de_Inmueble)
     
     
