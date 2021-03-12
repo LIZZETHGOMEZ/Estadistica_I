@@ -122,3 +122,5 @@
     boxplot(base$Precio_Venta ~ base$Tipo_de_Inmueble)
     
     
+    
+    
