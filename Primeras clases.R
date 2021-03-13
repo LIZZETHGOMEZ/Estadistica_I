@@ -2,7 +2,7 @@
     # 02 de marzo de 2021
     # Clase de Inferencia, Intro a R
     # =========================================================================
-    # MODIFICACIÓN A CDOIGPLJF
+    # MODIFICACIÓN CON KELY
     
     # R usa tipado din?mico, que es cuando modificamos las variables asignadas
     # Numero de Filas nrow()
