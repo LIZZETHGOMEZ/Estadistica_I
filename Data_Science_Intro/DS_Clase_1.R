@@ -1,4 +1,6 @@
-    
+
+#####################################################################################
+#####################################################################################    
     # Martes 09 de Marzo 2021 (Ayudantía DC)
     setwd("C:/Users/GOMEZ/Documents/Ciencias/Inferencia/Estadistica_I/Data_Science_Intro")
     df <- read.csv("telecom.csv")
@@ -29,9 +31,10 @@
         completitud[i, 'completitud'] = (sum(is.na(df[,i]))/dim(df)[1])*100
     }
     
+##########################################################################################
+##########################################################################################  
     
-    
-    # 12 de Marzo 2021 Continuación 
+    # 12 de Marzo 2021 (Continuación ayudantía DC)
     # Quitamos las variables que tienen más del 20% de los missing values
     
     # Revisar codigo....
@@ -106,7 +109,6 @@
         ggtitle("Gráfico de Barras") +
         labs(fill = "")
     
-    
     # Ahora con area.code
     # Lo cual me dividirá por colores como factores de acuerdo al tipod de area.code
     ggplot(data = df, aes(x = churn, fill = as.factor(area.code)))+
@@ -115,5 +117,3 @@
         ylab("Frecuencia")+
         ggtitle("Gráfico de Barras") +
         labs(fill = "")
-    
-    
