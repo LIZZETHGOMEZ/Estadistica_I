@@ -2,8 +2,8 @@
     # 02 de marzo de 2021
     # Clase de Inferencia, Intro a R
     # =========================================================================
-    # MODIFICACIÓN CON KELY
-    
+    # Prueba Commitment
+
     # R usa tipado din?mico, que es cuando modificamos las variables asignadas
     # Numero de Filas nrow()
     # Numero de Columnas ncol()
@@ -18,7 +18,6 @@
     library("dplyr")
     library("psych")
     base<- read_excel("BASE.xlsx")
-    
     
     base <- read.excel()
     base$Tipo_de_Inmueble
