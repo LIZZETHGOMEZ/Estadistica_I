@@ -1,18 +1,19 @@
     
 # Tarea 1 de Inferencia 2021
-# Lizzeth Gómez Rodríguez
-
-    #--------------------------------------------
-    # 1. Leer los datos
-    setwd("C:/Users/GOMEZ/Documents/Ciencias/Inferencia")
+# Lizzeth Gomez Rodriguez
+#
     library("readxl")
     library("dplyr")
     library("psych")
     library("ggplot2")
+    
+    #--------------------------------------------
+    # 1. Leer los datos
+    setwd("C:/Users/GOMEZ/Documents/Ciencias/Inferencia/Estadistica_I")
     df <- readxl::read_excel("BASE.xlsx")
     
     #--------------------------------------------------
-    # 2. TABULADOS DE VARIABES CATEGÓRICAS Y GRÁFICOS
+    # 2. TABULADOS DE VARIABES CATEGORICAS Y GRAFICOS
     head(df)
     
     # Tipo de Inmueble
@@ -20,7 +21,7 @@
     table_A
     barplot(table_A)
     
-    # Operación
+    # Operaci?n
     table_B <- table(df$Operacion)
     table_B
     barplot(table_B)
@@ -34,19 +35,19 @@
     table <- table(df$Tipo_de_Inmueble,df$Operacion, df$Provincia)
     ftable(table)
     
-    # Pregunta, cómo podemo visualizar las tres figuras en una sola impresión?
+    # Pregunta, como podemo visualizar las tres figuras en una sola impresion?
     # Digamos en el mismo Canva
     
     #----------------------------------------------------------------------
-    # 3.GRÁFICA POR PROVINCIA
+    # 3.GRAFICA POR PROVINCIA
     pie(table_C,radius = 1)
     
     ggplot2::ggplot(df, aes(x = "", fill= Provincia))+
         geom_bar(width = 1)+
         coord_polar("y")+
-        labs(title = "Gráfico Pie de Provincias")+
+        labs(title = "Grafico Pie de Provincias")+
         theme_void()
-    #La neta no sé cómo meter los porcentajes aquí
+    #La neta no se como meter los porcentajes aqui
     
     
     #----------------------------------------------------------
@@ -64,23 +65,23 @@
     quantile(df$Precio_Venta, 0.9) # percentil 90%
     
     #--------------------------------------------------------------
-    # 5.MEDIDAS DE DISPERSIÓN
+    # 5.MEDIDAS DE DISPERSION
     # Superficie
     var(df$Superficie) #Varianza
-    sd(df$Superficie)  #Desviación Estándar
+    sd(df$Superficie)  #Desviaci?n Est?ndar
     IQR(df$Superficie) #Rango Intercuartil
     
     #Precio de Venta
     var(df$Precio_Venta) #Varianza
-    sd(df$Precio_Venta)  #Desviación Estándar
+    sd(df$Precio_Venta)  #Desviaci?n Est?ndar
     IQR(df$Precio_Venta) #Rango Intercuartil
     
     #-----------------------------------------------------------
-    # 6.COEFICIENTE DE ASIMETRÍA
+    # 6.COEFICIENTE DE ASIMETR?A
     # Superficie
     psych::skew(df$Superficie)
-    # Como el CA < 0 ent. está sesgada a la derecha.
-    # Sin embargo se observa que el coeficiente está muy cercano a cero.
+    # Como el CA < 0 ent. est? sesgada a la derecha.
+    # Sin embargo se observa que el coeficiente est? muy cercano a cero.
     
     # Precio de Venta
     psych::skew(df$Precio_Venta)
@@ -90,11 +91,11 @@
     # 7.COEFICIENTE DE KURTOSIS 
     # Superficie
     psych::kurtosi(df$Superficie)
-    #Como la kurtosis resulto menor a cero, entonces la distribución es platocurtica
+    #Como la kurtosis resulto menor a cero, entonces la distribuci?n es platocurtica
     
     # Precio de venta
     psych::kurtosi(df$Precio_Venta)
-    # Como CA < 0 ent. la distribución es platocurtica 
+    # Como CA < 0 ent. la distribuci?n es platocurtica 
     
     
     
