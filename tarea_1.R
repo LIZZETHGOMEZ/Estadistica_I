@@ -12,12 +12,6 @@
     setwd("C:/Users/GOMEZ/Documents/Ciencias/Inferencia/Estadistica_I")
     df <- readxl::read_excel("BASE.xlsx")
     
-    # NOTA: 
-    # El archivo aqui usado es de extension .xlsx sin embargo en caso de 
-    # utilizar el archivo de extension .csv las variables numéricas apareceran 
-    # en formato string por lo que se deberán hacer las modificaciones correspondientes. 
-    # (Se recomienda usar gsub())
-    
     
     #--------------------------------------------------
     # 2. TABULADOS DE VARIABES CATEGORICAS Y GRAFICOS
