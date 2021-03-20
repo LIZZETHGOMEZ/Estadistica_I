@@ -68,12 +68,12 @@
     # 5.MEDIDAS DE DISPERSION
     # Superficie
     var(df$Superficie) #Varianza
-    sd(df$Superficie)  #Desviaci?n Est?ndar
+    sd(df$Superficie)  #Desviacion Estandar
     IQR(df$Superficie) #Rango Intercuartil
     
     #Precio de Venta
     var(df$Precio_Venta) #Varianza
-    sd(df$Precio_Venta)  #Desviaci?n Est?ndar
+    sd(df$Precio_Venta)  #Desviacion Estandar
     IQR(df$Precio_Venta) #Rango Intercuartil
     
     #-----------------------------------------------------------
@@ -91,7 +91,7 @@
     # 7.COEFICIENTE DE KURTOSIS 
     # Superficie
     psych::kurtosi(df$Superficie)
-    #Como la kurtosis resulto menor a cero, entonces la distribuci?n es platocurtica
+    #Como la kurtosis resulto menor a cero, entonces la distribucion es platocurtica
     
     # Precio de venta
     psych::kurtosi(df$Precio_Venta)
