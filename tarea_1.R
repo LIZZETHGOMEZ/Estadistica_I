@@ -12,6 +12,13 @@
     setwd("C:/Users/GOMEZ/Documents/Ciencias/Inferencia/Estadistica_I")
     df <- readxl::read_excel("BASE.xlsx")
     
+    # NOTA: 
+    # El archivo aqui usado es de extension .xlsx sin embargo en caso de 
+    # utilizar el archivo de extension .csv las variables numéricas apareceran 
+    # en formato string por lo que se deberán hacer las modificaciones correspondientes. 
+    # (Se recomienda usar gsub())
+    
+    
     #--------------------------------------------------
     # 2. TABULADOS DE VARIABES CATEGORICAS Y GRAFICOS
     head(df)
@@ -68,12 +75,12 @@
     # 5.MEDIDAS DE DISPERSION
     # Superficie
     var(df$Superficie) #Varianza
-    sd(df$Superficie)  #Desviaci?n Est?ndar
+    sd(df$Superficie)  #Desviacion Estandar
     IQR(df$Superficie) #Rango Intercuartil
     
     #Precio de Venta
     var(df$Precio_Venta) #Varianza
-    sd(df$Precio_Venta)  #Desviaci?n Est?ndar
+    sd(df$Precio_Venta)  #Desviacion Estandar
     IQR(df$Precio_Venta) #Rango Intercuartil
     
     #-----------------------------------------------------------
@@ -91,7 +98,7 @@
     # 7.COEFICIENTE DE KURTOSIS 
     # Superficie
     psych::kurtosi(df$Superficie)
-    #Como la kurtosis resulto menor a cero, entonces la distribuci?n es platocurtica
+    #Como la kurtosis resulto menor a cero, entonces la distribucion es platocurtica
     
     # Precio de venta
     psych::kurtosi(df$Precio_Venta)
