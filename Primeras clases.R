@@ -4,7 +4,7 @@
     # =========================================================================
     # Prueba Commitment
 
-    # R usa tipado din?mico, que es cuando modificamos las variables asignadas
+    # R usa tipado dinamico, que es cuando modificamos las variables asignadas
     # Numero de Filas nrow()
     # Numero de Columnas ncol()
     # Numero de variables length()
@@ -36,7 +36,8 @@
     
     
     # Lunes 06 de Marzo 2021
-    # Gr?fico
+    # =========================================================================
+    # Grafico
     boxplot(base$Superficie, ylim = c(0,300))
     abline(h = quantile(base$Superficie,0.25))
     abline(h = quantile(base$Superficie,0.75), col = 2)
@@ -106,9 +107,37 @@
     # Coeficiente de correlación
     cor(base$Superficie, base$Precio_Venta)
     
-    # Actualizar con video
+    # Sacamos la correlacion manualmente
+    # que es la covarianza de las variables estandarizadas
     
-    # ¿Cómo se dostribuye una numérica con categórica?
+    # i) Estandarizamos las variables (x - media)/sd
+    sup_sd <-(base$Superficie - mean(base$Superficie))/sd(base$Superficie)
+    pv_sd <- (base$Precio_Venta - mean(base$Precio_Venta))/sd(base$Precio_Venta)
+    
+    # ii) sacamos la covarianza de las variables ya estandarizadas que nos
+    # tiene que dar el coeficiente de correlacion:
+    cov(sup_sd,pv_sd)
+    cor(base$Superficie, base$Precio_Venta)
+    
+    # Notemos que la media de las variables estandarizadas tiene que ser ceri
+    # y la varianza debe ser igual a 1.
+    summary(sup_sd)
+    summary(pv_sd)
+    var(sup_sd)
+    var(pv_sd)
+    
+    # Relación entre dos variables
+    x <- 1:10
+    y <- 2 + 3*x
+    plot(x,y)
+    cor(x, y) #Relación perfecta con pendiente positiva
+    
+    y <- 2 - 3*x #Modificamos la pendiente
+    plot(x,y)
+    cor(x,y) #Correlación perfecta con pendiente negativa
+    
+    
+    # ¿Cómo se distribuye una numérica con categórica?
     # Tomamos un boxplot para ver como se distribuye cuando la variable numérica
     # toma sus valores en la variable categórica
     # Aquí vemos como se distribuye el precio de venta dependiendo la variable 
