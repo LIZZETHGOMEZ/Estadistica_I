@@ -5,7 +5,7 @@ Además de algunos acercamientos a su aplicación en la ***Ciencia de Datos.***\
 
 El repositorio se compone como sigue:
 
-[Intro_Data_Science](https://github.com/LIZZETHGOMEZ/Estadistica_I/tree/School/Intro_Data_Science) 
+1. [Intro_Data_Science](https://github.com/LIZZETHGOMEZ/Estadistica_I/tree/School/Intro_Data_Science) 
 
-[Tareas](https://github.com/LIZZETHGOMEZ/Estadistica_I/tree/School/Tareas)
+1. [Tareas](https://github.com/LIZZETHGOMEZ/Estadistica_I/tree/School/Tareas)
 
