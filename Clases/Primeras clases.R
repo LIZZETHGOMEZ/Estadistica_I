@@ -12,7 +12,7 @@
     
     # 04 de Marzo de 2021
     # =========================================================================
-    setwd("C:/Users/GOMEZ/Documents/Ciencias/Inferencia")
+    setwd("C:/Users/GOMEZ/Documents/Ciencias/Inferencia/Estadistica_I/Clases")
     library("readxl")
     library("dplyr")
     library("psych")
@@ -45,12 +45,10 @@
     
     psych::skew(base$Superficie)
     
-    
     # Calcular manualmente la Simetr?a
     x <- base$Superficie
     n <- length(x)
     sum((x-mean)^{3})/(n*sd(x)^{3})
-
     
     # Restamos al vector x el promedio,entrada por entrada
     
