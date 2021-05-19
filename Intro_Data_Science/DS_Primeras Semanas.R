@@ -135,3 +135,26 @@
         ylab("Frecuencia")+
         ggtitle("Gráfico de Barras") +
         labs(fill = "")
+
+    
+    ###############################################################################
+    # VARIABLES CONTINUAS
+    
+    hist(df$total.night.minutes)
+    hist(df$total.night.minutes, freq = F, breaks = 50, main = "Histograma de total.night.minutes",
+         xlab = "Minutos", ylab = "Frecuencia", col = "palegreen",
+         border = "palegreen4")
+    grid(10)    
+
+    #Para poner dos graficos en el mismo canv
+    par(mfrow = c(1,2))   
+    
+    hist(df[df$churn == 'False',]$total.night.minutes, breaks = 50, freq = F,
+         main = "Histograma de total.night.minutes para False".
+         xlab = "Minutes", ylab= "Frecuencia", )
+    
+    
+    
+    
+    
+    
