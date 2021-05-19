@@ -2,7 +2,6 @@
     # 02 de marzo de 2021
     # Clase de Inferencia, Intro a R
     # =========================================================================
-    # Prueba Commitment
 
     # R usa tipado dinamico, que es cuando modificamos las variables asignadas
     # Numero de Filas nrow()
