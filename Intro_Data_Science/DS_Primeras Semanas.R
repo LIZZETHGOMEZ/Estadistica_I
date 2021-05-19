@@ -38,10 +38,10 @@
     }
     
     View(completitud)
-##########################################################################################
-##########################################################################################  
     
-    # 12 de Marzo 2021 (Continuación ayudantía DC)
+    
+    # ##########################################################################
+    # 12 de Marzo 2021 
     # Quitamos las variables que tienen más del 20% de los missing values
     
     # Revisar codigo....
@@ -137,8 +137,9 @@
         labs(fill = "")
 
     
-    ###############################################################################
-    # VARIABLES CONTINUAS
+    ############################################################################
+    # 19 de Mayo de 2020
+    # Variables Continuas
     
     hist(df$total.night.minutes)
     hist(df$total.night.minutes, freq = F, breaks = 50, main = "Histograma de total.night.minutes",
