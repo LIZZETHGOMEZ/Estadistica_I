@@ -83,7 +83,7 @@
     total_casillas <- length(BASE_PRESIDENTE$AMLO)
 
     BASE_PRESIDENTE[sample.int(length(BASE_PRESIDENTE$AMLO),1, replace = FALSE),]$AMLO*total_casillas
-    sum(BASE_PRESIDENTE$AMLO) #Notemos que es muy parecido al numero anterior
+    votos_AMLO <- sum(BASE_PRESIDENTE$AMLO) #Notemos que es muy parecido al numero anterior
     
     
     # Repetimos muchas veces el experimento, que es lo que dice la teoria
@@ -107,13 +107,30 @@
     # Es deicir encontrar un estimador con la minima varianza posible. 
     
     # Saquemos la varianza, pero de una muestra mas grande
-    # Con muestra mas grande tenemos mas informacion y eso reduce variabilidad
+    # Con muestra mas grande tenemos mas informacion y eso reduce variabilidad(varianza)
     sample <- BASE_PRESIDENTE[sample.int(length(BASE_PRESIDENTE$AMLO),2000, replace = FALSE),]
     
-    # Saquemos en promedio los votospor casilla de AMLO
+    # Saquemos en promedio los votos por casilla de AMLO
     mean(sample$AMLO)
     
-    # Con base en la teoria lo multiplicamos por el total de la pob
+    # Con base en la teoria lo multiplicamos por el total de la poblacion
+    estimacion <- mean(sample$AMLO)*total_casillas
+    
+    # #######################################################################################
+    # 20 de Mayo de 2021
+    # Continuacion
+    
+    # Sacamos el error:
+    error <- (estimacion/votos_AMLO)-1
+    error
+    
+    
+    
        
+    
+    
+    
+    
+    
     
     
