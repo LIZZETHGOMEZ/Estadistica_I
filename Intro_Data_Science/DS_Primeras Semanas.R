@@ -150,9 +150,58 @@
     #Para poner dos graficos en el mismo canv
     par(mfrow = c(1,2))   
     
-    hist(df[df$churn == 'False',]$total.night.minutes, breaks = 50, freq = F,
-         main = "Histograma de total.night.minutes para False".
-         xlab = "Minutes", ylab= "Frecuencia", )
+    hist(df[df$churn == 'True',]$total.night.minutes, breaks = 50, freq = F,
+         main = "Histograma de total.night.minutes para False",
+         xlab = "Minutes", ylab= "Frecuencia", col = "steelblue4",
+         border = "black", xlim = c(-200,800))
+    
+    
+    
+    # ############################################################################
+    # Viernes 28 de Mayo de 2021
+    # Continuacion
+
+    
+    ggplot(df) +
+        geom_histogram(bins = 50, aes(x= total.night.minutes), fill = 'palegreen', col = 'blue') +
+        xlab('Minutos') +
+        ylab('Frecuencia') +
+        ggtitle("Histograma de total.night.minutes")
+    
+    
+    # Graficar total.night.minutes vs churn
+    ggplot(df) +
+        geom_histogram(bins = 50, aes(x = total.night.minutes, fill = churn), color = 'white') +
+        xlab('Minutos') +
+        ylab('Frecuencia') +
+        ggtitle("Histograma de total.night.minutes") +
+        labs(fill = 'Variable Churn')
+    
+    # Graficar histogramas de totla.night.minutes por cada categoria
+    ggplot(df) +
+        geom_histogram(bins = 50, aes(x = total.night.minutes, fill = churn), color = 'black') +
+        facet_grid(churn~. ,scales = "free") + #Graficar por filas de acuerdo a la categoria churn
+        xlab("carat") +
+        ylab("frecuencia") +
+        ggtitle("Histograma de la variable carat para los distintos cut") +
+        labs(fill = "cut")
+    
+    
+    # ##########################################################################
+    # ##########################################################################
+    #                GRAFICSO DE DENSIDAD
+    
+    par(mfrow = c(1,1)) #Partimos el canvas, aqui para hacer un solo grafico
+    
+    plot(density(df$total.night.minutes), main = "Densidad de la variable total.night.minutes",
+         xlab ="Minutes", ylab = "Densidad", col = "blue", lwd = 3)
+    grid(10)
+    
+    
+    plot(density(df$total.night.minutes), main = "Densidad de la variable total.night.minutes",
+         xlab ="Minutes", ylab = "Densidad", col = "blue", lwd = 3)
+    grid(10)
+    
     
     
     
